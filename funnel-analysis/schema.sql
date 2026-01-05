@@ -10,3 +10,8 @@ CREATE TABLE events (
     event_date DATE
 );
 
+-- Event types:
+-- -signup
+-- -view_product
+-- -add_to_cart
+-- -purchase
