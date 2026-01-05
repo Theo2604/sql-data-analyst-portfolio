@@ -1,22 +1,29 @@
-# 👋 Hi, I'm Theo Nguyen
+# SQL Data Analyst Portfolio
 
-Welcome to my GitHub profile! I'm a **self-learn developer** passionate about building creative and efficient projects.
+This repository contains SQL projects demonstrating my ability to analyze data, answer business questions, and extract actionable insights using PostgreSQL.
 
-### 🧠 About Me
-- 💻 Focused on **Python** and **SQL**  
-- 🔍 Interested in data analysis and automation  
-- 🌱 Constantly learning and experimenting with new tools and technologies  
+## 📊 Projects
 
-### 🚀 Featured Projects
-- [Data Insights Dashboard](https://github.com/Theo2604)  
-- [Caesar Cipher Tool](https://github.com/Theo2604)  
-- [Portfolio Website](https://Theo2604.github.io)
+### 1. Sales & Revenue Analysis
+Analyzed sales data to identify revenue trends, top-performing products, customer contribution, and regional performance.
+- Skills: JOINs, CTEs, subqueries, window functions
+- Metrics: Revenue growth, AOV, top customers, top products
 
-### 📫 Connect with Me
-- 💼 [LinkedIn](https://www.linkedin.com/in/theo-nguyen-2604/)  
-- 🌍 [Portfolio Website](https://theo2604.github.io/Theo2604/) 
-- 🐙 [GitHub](https://github.com/Theo2604)
+### 2. Customer Churn & Retention Analysis
+Evaluated customer transaction behavior to identify churned customers, retention trends, and customer lifetime.
+- Skills: CTEs, date logic, window functions
+- Metrics: Churn rate, retention, customer lifetime
 
----
+### 3. Funnel & Conversion Analysis
+Analyzed user behavior through a multi-step funnel to measure conversion rates and drop-off points.
+- Skills: Conditional aggregation, CTEs, FILTER, funnel analysis
+- Metrics: Conversion rates, drop-offs, time to purchase
 
-⭐️ *Thanks for visiting my profile! Feel free to check out my projects or connect with me!*
+## 🛠 Tools & Skills
+- PostgreSQL
+- SQL (JOINs, CTEs, subqueries, window functions)
+- Business & KPI-driven analysis
+- GitHub
+
+## 👤 About Me
+Aspiring Data Analyst with strong SQL skills and a focus on turning raw data into business insights.
