@@ -1,0 +1,13 @@
+dimension_type,dimension_value,revenue
+Region,East,1200.00
+Region,South,600.00
+Region,West,4600.00
+Region,North,6100.00
+Product,Chair,1200.00
+Product,Desk,600.00
+Product,Phone,3700.00
+Product,Laptop,7000.00
+Customer,Alice,6100.00
+Customer,Bob,600.00
+Customer,Charlie,1200.00
+Customer,Diana,4600.00
