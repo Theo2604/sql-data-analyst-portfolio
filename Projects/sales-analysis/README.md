@@ -30,16 +30,18 @@ The goal is to understand revenue trends, growth patterns, and key revenue drive
 
 ## Repository Structure
 
+<pre>
 sales-analysis/
 ├── sql/
-│ └── sales_analysis.sql
-│ ├── schema.sql
-│ └── sample_data.sql
+│   ├── sales_analysis.sql
+│   ├── schema.sql
+│   └── sample_data.sql
 ├── data/
-│ ├── monthly_revenue_metrics.csv
-│ ├── dimension_revenue_metrics.csv
-│ └── kpi_metrics.csv
+│   ├── monthly_revenue_metrics.csv
+│   ├── dimension_revenue_metrics.csv
+│   └── kpi_metrics.csv
 ├── powerbi/
-│ ├── sales_dashboard.pbix
-│ └── dashboard_preview.png
+│   ├── sales_dashboard.pbix
+│   └── dashboard_preview.png
 └── README.md
+</pre>
