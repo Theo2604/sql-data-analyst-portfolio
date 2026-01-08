@@ -29,6 +29,7 @@ The goal is to understand revenue trends, growth patterns, and key revenue drive
 ![Sales Dashboard](powerbi/dashboard_preview.png)
 
 ## Repository Structure
+
 sales-analysis/
 ├── sql/
 │ └── sales_analysis.sql
