@@ -1,42 +1,48 @@
-# Funnel & Conversion Analysis (PostgreSQL)
+# Funnel & Conversion Analysis
 
-## Objective
-Analyze user behavior through a conversion funnel to identify drop-off points and conversion rates.
+## Overview
+This project analyzes user behavior through a multi-step funnel to identify drop-off points
+and measure conversion efficiency across different stages.
 
-## Funnel Steps
-1. Signup
-2. View Product
-3. Add to Cart
-4. Purchase
+## Tools & Technologies
+- PostgreSQL (CTEs, window functions, funnel logic)
+- Power BI (funnel and conversion dashboards)
+- GitHub (project documentation)
 
-## Business Questions
-- How many users complete each funnel step?
-- Where do users drop off?
-- What are the conversion rates between steps?
-- How long does it take users to convert?
+## Key Analyses
+- User counts per funnel step
+- Conversion rates between funnel stages
+- Overall conversion rate from visit to purchase
 
-## Tools
-- PostgreSQL
-- SQL (CTEs, subqueries, aggregations, filters)
+## Data Workflow
+1. User event data analyzed in PostgreSQL
+2. Funnel metrics calculated using CTEs and window functions
+3. Final funnel datasets exported to CSV
+4. Power BI used to visualize funnel performance and KPIs
 
-## Key Metrics
-- Funnel conversion rates
-- Drop-off counts
-- Time to purchase
-
-## Techniques Used
+## Key SQL Techniques Used
 - Common Table Expressions (CTEs)
-- Conditional aggregation
-- FILTER clause
-- Date arithmetic
+- Window functions (`LAG`)
+- Funnel analysis logic
+- Aggregations and conditional calculations
 
-## Insights
-- Largest drop-off occurs between product view and add to cart
-- Users who add items to cart have high purchase intent
-- Faster purchases correlate with higher funnel completion
+## Dashboard Preview
+![Funnel Dashboard](powerbi/dashboard_preview.png)
 
-## Next Steps
-- Segment funnel by signup month
-- Analyze funnel by traffic source
-- Visualize funnel in BI tools
+## Repository Structure
 
+<pre>
+project-1-sales-analysis/
+├── sql/
+│   ├── sales_analysis.sql
+│   ├── schema.sql
+│   └── sample_data.sql
+├── data/
+│   ├── monthly_revenue_metrics.csv
+│   ├── dimension_revenue_metrics.csv
+│   └── kpi_metrics.csv
+├── powerbi/
+│   ├── sales_dashboard.pbix
+│   └── dashboard_preview.png
+└── README.md
+</pre>
