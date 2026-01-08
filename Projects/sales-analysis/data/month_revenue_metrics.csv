@@ -1,0 +1,4 @@
+month,revenue,previous_month_revenue,revenue_growth
+2024-01-01,4800.00,null,null
+2024-02-01,1800.00,4800.00,-3000.00
+2024-03-01,5900.00,1800.00,4100.00
