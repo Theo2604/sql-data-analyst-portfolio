@@ -1,32 +1,48 @@
-# Customer Churn & Retention Analysis (PostgreSQL)
+# Customer Churn & Retention Analysis
 
-## Objective
-Analyze customer transaction behavior to identify churned customers and measure retention.
+## Overview
+This project focuses on customer retention and churn behavior using transactional data.
+The analysis identifies retention trends, churn levels, and overall customer stability over time.
 
-## Tools
-- PostgreSQL
-- SQL (CTEs, subqueries, JOINs, window functions)
+## Tools & Technologies
+- PostgreSQL (CTEs, window functions, date logic)
+- Power BI (retention and churn dashboards)
+- GitHub (documentation and portfolio presentation)
 
-## Key Metrics
-- Active vs churned customers
-- Customer lifetime
-- Monthly retention
-- Churn rate
+## Key Analyses
+- Monthly active customers and retained customers
+- Customer churn identification based on inactivity
+- Churn rate as a key performance indicator
 
-## Techniques Used
-- LEFT JOIN
+## Data Workflow
+1. Customer activity analyzed in PostgreSQL
+2. Retention and churn metrics calculated using CTEs and window functions
+3. Final datasets exported to CSV
+4. Power BI used for trend and KPI visualization
+
+## Key SQL Techniques Used
 - Common Table Expressions (CTEs)
-- Date calculations
-- Window functions (LAG)
-- Aggregations
+- Window functions (`LAG`)
+- Date-based filtering
+- Subqueries for churn calculations
 
-## Insights
-- Customers with frequent early transactions have longer lifetimes
-- Churn is highest within the first 3 months
-- Retention declines month over month
+## Dashboard Preview
+![Churn Dashboard](powerbi/dashboard_preview.png)
 
-## Next Steps
-- Cohort-based retention analysis
-- Segment churn by customer value
-- Visualize retention curves
+## Repository Structure
 
+<pre>
+project-1-sales-analysis/
+├── sql/
+│   ├── sales_analysis.sql
+│   ├── schema.sql
+│   └── sample_data.sql
+├── data/
+│   ├── monthly_revenue_metrics.csv
+│   ├── dimension_revenue_metrics.csv
+│   └── kpi_metrics.csv
+├── powerbi/
+│   ├── sales_dashboard.pbix
+│   └── dashboard_preview.png
+└── README.md
+</pre>
