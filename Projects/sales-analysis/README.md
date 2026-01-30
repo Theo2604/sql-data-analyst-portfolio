@@ -26,7 +26,8 @@ The goal is to understand revenue trends, growth patterns, and key revenue drive
 - Aggregations and subqueries
 
 ## Dashboard Preview
-![Sales Dashboard](powerbi/dashboard_preview.png)
+![Sales Dashboard](<img width="922" height="447" alt="page_1_sales_performance_overview" src="https://github.com/user-attachments/assets/8fbc4551-a3ff-45d2-9df3-c3741951313c" />
+)
 
 ## Repository Structure
 
