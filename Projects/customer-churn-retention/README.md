@@ -32,9 +32,9 @@ The analysis identifies retention trends, churn levels, and overall customer sta
 ## Repository Structure
 
 <pre>
-project-1-sales-analysis/
+customer-churn-retention/
 ├── sql/
-│   ├── sales_analysis.sql
+│   ├── churn_retention_analysis.sql
 │   ├── schema.sql
 │   └── sample_data.sql
 ├── data/
