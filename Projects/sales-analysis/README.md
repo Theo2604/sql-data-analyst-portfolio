@@ -1,4 +1,4 @@
-<img width="922" height="447" alt="page_1_sales_performance_overview" src="https://github.com/user-attachments/assets/77002dd8-e569-4600-b136-c95897c55778" /># Sales & Revenue Analysis
+# Sales & Revenue Analysis
 
 ## Overview
 This project analyzes sales performance using PostgreSQL and visualizes key business insights in Power BI.  
@@ -26,8 +26,7 @@ The goal is to understand revenue trends, growth patterns, and key revenue drive
 - Aggregations and subqueries
 
 ## Dashboard Preview
-![Sales Dashboard](![Uploading page_1_sales_performance_overview.png…])
-)
+<img width="922" height="447" alt="page_1_sales_performance_overview" src="https://github.com/user-attachments/assets/77002dd8-e569-4600-b136-c95897c55778" />
 
 ## Repository Structure
 
