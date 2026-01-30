@@ -32,9 +32,9 @@ and measure conversion efficiency across different stages.
 ## Repository Structure
 
 <pre>
-project-1-sales-analysis/
+funnel-conversion-analysis/
 ├── sql/
-│   ├── sales_analysis.sql
+│   ├── funnel_conversion_analysis.sql
 │   ├── schema.sql
 │   └── sample_data.sql
 ├── data/
