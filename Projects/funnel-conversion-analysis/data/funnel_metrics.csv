@@ -1,0 +1,5 @@
+funnel_step,users,conversion_rate,sort_key
+Signup,6,100.0,1
+View Product,5,83.33,2
+Add to Cart,3,60.00,3
+Purchase,3,100.00,4
