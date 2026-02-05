@@ -14,7 +14,7 @@ Data analysis projects demonstrating SQL expertise and business insight generati
 - **Tools:** PostgreSQL, Power BI
 - **Skills:** Date logic, Cohort Analysis, Retention Metrics
 - **Business Questions:** Churn rate, customer lifetime, retention trends
-- **Link:** [customer-churn-analysis/](customer-churn-analysis/)
+- **Link:** [customer-churn-analysis/](Projects/customer-churn-retention)
 
 ### 3. Funnel & Conversion Analysis
 - **Tools:** PostgreSQL, Power BI  
