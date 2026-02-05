@@ -8,7 +8,7 @@ Data analysis projects demonstrating SQL expertise and business insight generati
 - **Tools:** PostgreSQL, Power BI
 - **Skills:** CTEs, Window Functions, JOINs, Dashboard Design
 - **Business Questions:** Revenue trends, top products, customer value
-- **Link:** [sales-revenue-analysis/](sales-revenue-analysis/)
+- **Link:** [sales-revenue-analysis/](Projects/sales-analysis)
 
 ### 2. Customer Churn & Retention Analysis  
 - **Tools:** PostgreSQL, Power BI
