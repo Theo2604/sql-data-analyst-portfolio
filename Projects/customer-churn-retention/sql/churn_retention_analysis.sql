@@ -54,28 +54,24 @@ GROUP BY month
 ORDER BY month;
 
 -- Cohort analysis
-WITH cohort_base AS (
-    SELECT
-        customer_id,
-        DATE_TRUNC('month', signup_date) AS cohort_month,
-        DATE_TRUNC('month', transaction_date) AS transaction_month,
-        EXTRACT(MONTH FROM AGE(transaction_date, signup_date)) AS months_since_signup
-    FROM customers c
-    JOIN transactions t ON c.customer_id = t.customer_id
-    WHERE transaction_date IS NOT NULL
+WITH events AS (
+  SELECT
+    c.customer_id,
+    DATE_TRUNC('month', c.signup_date) AS cohort_month,
+    EXTRACT(MONTH FROM AGE(t.transaction_date, c.signup_date))::int AS months_since_signup
+  FROM customers c
+  JOIN transactions t USING (customer_id)
+  WHERE t.transaction_date IS NOT NULL
 )
 SELECT
-    cohort_month,
-    months_since_signup,
-    COUNT(DISTINCT customer_id) AS customers,
-    ROUND(
-        COUNT(DISTINCT customer_id) * 100.0 /
-        FIRST_VALUE(COUNT(DISTINCT customer_id)) OVER (
-            PARTITION BY cohort_month 
-            ORDER BY months_since_signup
-        ),
-        2
-    ) AS retention_percentage
-FROM cohort_base
+  cohort_month,
+  months_since_signup,
+  COUNT(DISTINCT customer_id) AS customers,
+  ROUND(
+    COUNT(DISTINCT customer_id)::numeric * 100.0 /
+    MAX(COUNT(DISTINCT customer_id)) OVER (PARTITION BY cohort_month),
+    2
+  ) AS retention_percentage
+FROM events
 GROUP BY cohort_month, months_since_signup
 ORDER BY cohort_month, months_since_signup;
