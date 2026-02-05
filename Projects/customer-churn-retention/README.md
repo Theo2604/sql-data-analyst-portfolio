@@ -38,11 +38,11 @@ customer-churn-retention/
 │   ├── schema.sql
 │   └── sample_data.sql
 ├── data/
-│   ├── monthly_revenue_metrics.csv
-│   ├── dimension_revenue_metrics.csv
-│   └── kpi_metrics.csv
+│   ├── churn_status.csv
+│   ├── cohort_analysis.csv
+│   └── retention_metrics.csv
 ├── powerbi/
-│   ├── sales_dashboard.pbix
+│   ├── churn_dashboard.pbix
 │   └── dashboard_preview.png
 └── README.md
 </pre>
