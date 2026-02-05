@@ -38,11 +38,11 @@ funnel-conversion-analysis/
 │   ├── schema.sql
 │   └── sample_data.sql
 ├── data/
-│   ├── monthly_revenue_metrics.csv
-│   ├── dimension_revenue_metrics.csv
-│   └── kpi_metrics.csv
+│   ├── funnel_metrics.csv
+│   ├── dropoff_analysis.csv
+│   └── time_analysis.csv
 ├── powerbi/
-│   ├── sales_dashboard.pbix
+│   ├── funnel_dashboard.pbix
 │   └── dashboard_preview.png
 └── README.md
 </pre>
