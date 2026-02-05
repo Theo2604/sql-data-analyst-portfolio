@@ -20,7 +20,7 @@ Data analysis projects demonstrating SQL expertise and business insight generati
 - **Tools:** PostgreSQL, Power BI  
 - **Skills:** Funnel Metrics, Conversion Rates, Drop-off Analysis
 - **Business Questions:** User journey, conversion bottlenecks, optimization
-- **Link:** [funnel-conversion-analysis/](funnel-conversion-analysis/)
+- **Link:** [funnel-conversion-analysis/](Projects/funnel-conversion-analysis)
 
 ## 🛠️ Technical Skills
 - **SQL:** PostgreSQL, CTEs, Window Functions, JOINs, Subqueries
