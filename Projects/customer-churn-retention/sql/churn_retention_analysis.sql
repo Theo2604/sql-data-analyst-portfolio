@@ -1,21 +1,4 @@
--- Last Transaction per Customer (CTE)
-WITH last_transaction AS (
-    SELECT
-        customer_id,
-        MAX(transaction_date) AS last_txn_date
-    FROM transactions
-    GROUP BY customer_id
-)
-SELECT
-    c.customer_id,
-    c.signup_date,
-    lt.last_txn_date
-FROM customers c
-LEFT JOIN last_transaction lt
-ON c.customer_id = lt.customer_id;
-
--- Identify Churned Customers
--- Definition: No transaction in the last 90 days
+-- Churn analysis
 WITH last_transaction AS (
     SELECT
         customer_id,
@@ -29,7 +12,7 @@ SELECT
     lt.last_txn_date,
     CASE
         WHEN lt.last_txn_date < CURRENT_DATE - INTERVAL '90 days'
-        OR lt.last_txn_date IS NULL
+             OR lt.last_txn_date IS NULL
         THEN 'Churned'
         ELSE 'Active'
     END AS customer_status
@@ -37,21 +20,7 @@ FROM customers c
 LEFT JOIN last_transaction lt
 ON c.customer_id = lt.customer_id;
 
--- Customer Lifetime (in Days)
-WITH customer_lifetime AS (
-    SELECT
-        customer_id,
-        MIN(transaction_date) AS first_txn,
-        MAX(transaction_date) AS last_txn
-    FROM transactions
-    GROUP BY customer_id
-)
-SELECT
-    customer_id,
-    last_txn - first_txn AS lifetime_days
-FROM customer_lifetime;
-
--- Monthly Retention Table (CTE + Window Function)
+-- Retention metrics
 WITH monthly_activity AS (
     SELECT DISTINCT
         customer_id,
@@ -71,25 +40,42 @@ SELECT
     COUNT(DISTINCT CASE
         WHEN prev_month = month - INTERVAL '1 month'
         THEN customer_id
-    END) AS retained_customers
+    END) AS retained_customers,
+    ROUND(
+        COUNT(DISTINCT CASE
+            WHEN prev_month = month - INTERVAL '1 month'
+            THEN customer_id
+        END) * 100.0 / 
+        NULLIF(LAG(COUNT(DISTINCT customer_id)) OVER (ORDER BY month), 0),
+        2
+    ) AS retention_rate
 FROM retention
 GROUP BY month
 ORDER BY month;
 
--- Churn Rate
-WITH churn_status AS (
+-- Cohort analysis
+WITH cohort_base AS (
     SELECT
-        c.customer_id,
-        CASE
-            WHEN MAX(t.transaction_date) < CURRENT_DATE - INTERVAL '90 days'
-            OR MAX(t.transaction_date) IS NULL
-            THEN 1 ELSE 0
-        END AS is_churned
+        customer_id,
+        DATE_TRUNC('month', signup_date) AS cohort_month,
+        DATE_TRUNC('month', transaction_date) AS transaction_month,
+        EXTRACT(MONTH FROM AGE(transaction_date, signup_date)) AS months_since_signup
     FROM customers c
-    LEFT JOIN transactions t
-    ON c.customer_id = t.customer_id
-    GROUP BY c.customer_id
+    JOIN transactions t ON c.customer_id = t.customer_id
+    WHERE transaction_date IS NOT NULL
 )
 SELECT
-    ROUND(SUM(is_churned) * 100.0 / COUNT(*), 2) AS churn_rate_percentage
-FROM churn_status;
+    cohort_month,
+    months_since_signup,
+    COUNT(DISTINCT customer_id) AS customers,
+    ROUND(
+        COUNT(DISTINCT customer_id) * 100.0 /
+        FIRST_VALUE(COUNT(DISTINCT customer_id)) OVER (
+            PARTITION BY cohort_month 
+            ORDER BY months_since_signup
+        ),
+        2
+    ) AS retention_percentage
+FROM cohort_base
+GROUP BY cohort_month, months_since_signup
+ORDER BY cohort_month, months_since_signup;
