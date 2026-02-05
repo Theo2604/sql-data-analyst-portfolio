@@ -1,29 +1,31 @@
 # SQL Data Analyst Portfolio
 
-This repository contains SQL projects demonstrating my ability to analyze data, answer business questions, and extract actionable insights using PostgreSQL.
+Data analysis projects demonstrating SQL expertise and business insight generation.
 
 ## 📊 Projects
 
 ### 1. Sales & Revenue Analysis
-Analyzed sales data to identify revenue trends, top-performing products, customer contribution, and regional performance.
-- Skills: JOINs, CTEs, subqueries, window functions
-- Metrics: Revenue growth, AOV, top customers, top products
+- **Tools:** PostgreSQL, Power BI
+- **Skills:** CTEs, Window Functions, JOINs, Dashboard Design
+- **Business Questions:** Revenue trends, top products, customer value
+- **Link:** [sales-revenue-analysis/](sales-revenue-analysis/)
 
-### 2. Customer Churn & Retention Analysis
-Evaluated customer transaction behavior to identify churned customers, retention trends, and customer lifetime.
-- Skills: CTEs, date logic, window functions
-- Metrics: Churn rate, retention, customer lifetime
+### 2. Customer Churn & Retention Analysis  
+- **Tools:** PostgreSQL, Power BI
+- **Skills:** Date logic, Cohort Analysis, Retention Metrics
+- **Business Questions:** Churn rate, customer lifetime, retention trends
+- **Link:** [customer-churn-analysis/](customer-churn-analysis/)
 
 ### 3. Funnel & Conversion Analysis
-Analyzed user behavior through a multi-step funnel to measure conversion rates and drop-off points.
-- Skills: Conditional aggregation, CTEs, FILTER, funnel analysis
-- Metrics: Conversion rates, drop-offs, time to purchase
+- **Tools:** PostgreSQL, Power BI  
+- **Skills:** Funnel Metrics, Conversion Rates, Drop-off Analysis
+- **Business Questions:** User journey, conversion bottlenecks, optimization
+- **Link:** [funnel-conversion-analysis/](funnel-conversion-analysis/)
 
-## 🛠 Tools & Skills
-- PostgreSQL
-- SQL (JOINs, CTEs, subqueries, window functions)
-- Business & KPI-driven analysis
-- GitHub
+## 🛠️ Technical Skills
+- **SQL:** PostgreSQL, CTEs, Window Functions, JOINs, Subqueries
+- **Visualization:** Power BI, Dashboard Design, DAX
+- **Analysis:** Business Metrics, Trend Analysis, Cohort Analysis
 
 ## 👤 About Me
 Aspiring Data Analyst with strong SQL skills and a focus on turning raw data into business insights.
