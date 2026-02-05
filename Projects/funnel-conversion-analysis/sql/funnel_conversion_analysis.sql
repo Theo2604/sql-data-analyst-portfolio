@@ -1,51 +1,45 @@
 -- Funnel Metrics
 WITH funnel_steps AS (
-    SELECT
-        user_id,
-        MAX(CASE WHEN event_type = 'signup' THEN 1 ELSE 0 END) AS signed_up,
-        MAX(CASE WHEN event_type = 'view_product' THEN 1 ELSE 0 END) AS viewed_product,
-        MAX(CASE WHEN event_type = 'add_to_cart' THEN 1 ELSE 0 END) AS added_to_cart,
-        MAX(CASE WHEN event_type = 'purchase' THEN 1 ELSE 0 END) AS purchased
-    FROM events
-    GROUP BY user_id
+  SELECT
+    user_id,
+    MAX((event_type = 'signup')::int)       AS signed_up,
+    MAX((event_type = 'view_product')::int) AS viewed_product,
+    MAX((event_type = 'add_to_cart')::int)  AS added_to_cart,
+    MAX((event_type = 'purchase')::int)     AS purchased
+  FROM events
+  GROUP BY user_id
 )
-SELECT
-    'Signup' AS funnel_step,
-    SUM(signed_up) AS users,
-    100.0 AS conversion_rate
+SELECT 'Signup'       AS funnel_step,
+       SUM(signed_up) AS users,
+       100.0          AS conversion_rate,
+       1              AS sort_key
 FROM funnel_steps
 
 UNION ALL
 
-SELECT
-    'View Product',
-    SUM(viewed_product),
-    ROUND(SUM(viewed_product) * 100.0 / NULLIF(SUM(signed_up), 0), 2)
+SELECT 'View Product' AS funnel_step,
+       SUM(viewed_product),
+       ROUND(SUM(viewed_product) * 100.0 / NULLIF(SUM(signed_up), 0), 2),
+       2
 FROM funnel_steps
 
 UNION ALL
 
-SELECT
-    'Add to Cart',
-    SUM(added_to_cart),
-    ROUND(SUM(added_to_cart) * 100.0 / NULLIF(SUM(viewed_product), 0), 2)
+SELECT 'Add to Cart' AS funnel_step,
+       SUM(added_to_cart),
+       ROUND(SUM(added_to_cart) * 100.0 / NULLIF(SUM(viewed_product), 0), 2),
+       3
 FROM funnel_steps
 
 UNION ALL
 
-SELECT
-    'Purchase',
-    SUM(purchased),
-    ROUND(SUM(purchased) * 100.0 / NULLIF(SUM(added_to_cart), 0), 2)
+SELECT 'Purchase' AS funnel_step,
+       SUM(purchased),
+       ROUND(SUM(purchased) * 100.0 / NULLIF(SUM(added_to_cart), 0), 2),
+       4
 FROM funnel_steps
 
-ORDER BY 
-    CASE funnel_step
-        WHEN 'Signup' THEN 1
-        WHEN 'View Product' THEN 2
-        WHEN 'Add to Cart' THEN 3
-        WHEN 'Purchase' THEN 4
-    END;
+ORDER BY sort_key;
 
 -- Drop-Off Analysis
 WITH funnel AS (
