@@ -42,6 +42,10 @@ sales-analysis/
 │   └── kpi_metrics.csv
 ├── powerbi/
 │   ├── sales_dashboard.pbix
-│   └── dashboard_preview.png
+│   └── page_1_sales_performance_overview.png.png
+│   └── page_2_revenue_trends_analysis.png
+│   └── page_3_revenue_breakdown_analysis_customer.png
+│   └── page_4_revenue_breakdown_analysis_product.png
+│   └── page_5_revenue_breakdown_analysis_region.png
 └── README.md
 </pre>
