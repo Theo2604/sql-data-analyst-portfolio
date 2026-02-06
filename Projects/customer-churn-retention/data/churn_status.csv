@@ -1,7 +1,0 @@
-customer_id,signup_date,last_txn_date,customer_status
-1,2023-01-10,2023-03-05,Churned
-2,2023-02-05,2023-02-20,Churned
-3,2023-03-12,2023-04-10,Churned
-4,2023-04-01,2023-04-05,Churned
-5,2023-05-20,2023-06-30,Churned
-6,2023-06-15,null,Churned
