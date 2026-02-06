@@ -1,0 +1,7 @@
+customer_id,signup_date,last_txn_date,total_transactions,total_spent,customer_status,days_inactive
+1,2023-01-10,2023-03-05,3,350.00,Churned,1068
+2,2023-02-05,2023-02-20,1,60.00,Churned,1081
+3,2023-03-12,2023-04-10,2,380.00,Churned,1032
+4,2023-04-01,2023-04-05,1,90.00,Churned,1037
+5,2023-05-20,2023-06-30,2,550.00,Churned,951
+6,2023-06-15,null,0,0,Never Active,966
